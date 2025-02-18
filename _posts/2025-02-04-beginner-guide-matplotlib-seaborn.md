@@ -43,7 +43,7 @@ plt.savefig("assets/images/scatter_plot.png")
 plt.show()
 ```
 
-![Scatter Plot](/assets/images/scatter_plot.png)
+![Scatter Plot]({{site.url}}/{{site.baseurl}}/assets/images/scatter_plot.png)
 
 This plot makes it easy to see how different species vary in body mass and flipper length.
 
@@ -59,7 +59,7 @@ plt.savefig("assets/images/bar_chart.png")
 plt.show()
 ```
 
-![Bar Chart](/assets/images/bar_chart.png)
+![Bar Chart]({{site.url}}/{{site.baseurl}}/assets/images/bar_chart.png)
 
 This bar chart highlights the differences in average body mass across the three species.
 
@@ -75,7 +75,7 @@ plt.savefig("assets/images/histogram.png")
 plt.show()
 ```
 
-![Histogram](/assets/images/histogram.png)
+![Histogram]({{site.url}}/{{site.baseurl}}/assets/images/histogram.png)
 
 The KDE curve provides a smooth approximation of the data distribution, making it easier to detect peaks and variations.
 
@@ -101,7 +101,7 @@ plt.savefig("assets/images/line_plot.png")
 plt.show()
 ```
 
-![Line Plot](/assets/images/line_plot.png)
+![Line Plot]({{site.url}}/{{site.baseurl}}/assets/images/line_plot.png)
 
 ## Conclusion
 
@@ -115,4 +115,4 @@ But this is just the beginning! Experimenting with different datasets and visual
 - **Share Your Work**: Use your favorite visualizations in reports, presentations, or social media posts. Don’t forget to credit the tools you used!
 - **Join the Conversation**: Leave a comment or share your thoughts about this guide. What dataset are you planning to visualize next?
 
-Data visualization is a skill you’ll use throughout your data science journey—start practicing today! 
+Data visualization is a skill you’ll use throughout your data science journey—start practicing today!
