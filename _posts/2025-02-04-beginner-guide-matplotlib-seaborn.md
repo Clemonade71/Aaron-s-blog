@@ -39,8 +39,11 @@ penguins = sns.load_dataset("penguins")
 # Create scatter plot
 sns.scatterplot(data=penguins, x="flipper_length_mm", y="body_mass_g", hue="species")
 plt.title("Flipper Length vs Body Mass")
+plt.savefig("assets/images/scatter_plot.png")
 plt.show()
 ```
+
+![Scatter Plot](assets/images/scatter_plot.png)
 
 This plot makes it easy to see how different species vary in body mass and flipper length.
 
@@ -52,8 +55,11 @@ Next, let’s create a bar chart to visualize the average body mass of each peng
 # Bar chart example
 sns.barplot(data=penguins, x="species", y="body_mass_g", ci=None)
 plt.title("Average Body Mass of Penguin Species")
+plt.savefig("assets/images/bar_chart.png")
 plt.show()
 ```
+
+![Bar Chart](assets/images/bar_chart.png)
 
 This bar chart highlights the differences in average body mass across the three species.
 
@@ -65,8 +71,11 @@ Histograms are great for visualizing distributions. They help identify patterns 
 # Histogram example
 sns.histplot(data=penguins, x="flipper_length_mm", kde=True, hue="species", bins=20)
 plt.title("Distribution of Flipper Lengths")
+plt.savefig("assets/images/histogram.png")
 plt.show()
 ```
+
+![Histogram](assets/images/histogram.png)
 
 The KDE curve provides a smooth approximation of the data distribution, making it easier to detect peaks and variations.
 
@@ -88,8 +97,11 @@ data = pd.DataFrame({
 # Line plot
 sns.lineplot(data=data, x="x", y="y")
 plt.title("Example Line Plot")
+plt.savefig("assets/images/line_plot.png")
 plt.show()
 ```
+
+![Line Plot](assets/images/line_plot.png)
 
 ## Conclusion
 
