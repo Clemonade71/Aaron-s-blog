@@ -43,7 +43,7 @@ plt.savefig("assets/images/scatter_plot.png")
 plt.show()
 ```
 
-![Scatter Plot](/assets/images/scatter_plot.png)
+![]({{site.url}}/{{site.baseurl}}/assets/images/scatter_plot.png)
 
 This plot makes it easy to see how different species vary in body mass and flipper length.
 
