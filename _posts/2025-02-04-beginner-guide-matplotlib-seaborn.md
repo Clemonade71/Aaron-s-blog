@@ -43,7 +43,7 @@ plt.savefig("assets/images/scatter_plot.png")
 plt.show()
 ```
 
-![Scatter Plot](/assets/images/scatter_plot.png)
+{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/scatter_plot.png){% endraw %}
 
 This plot makes it easy to see how different species vary in body mass and flipper length.
 
@@ -59,7 +59,7 @@ plt.savefig("assets/images/bar_chart.png")
 plt.show()
 ```
 
-![Bar Chart](/assets/images/bar_chart.png)
+{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/bar_chart.png){% endraw %}
 
 This bar chart highlights the differences in average body mass across the three species.
 
@@ -75,7 +75,7 @@ plt.savefig("assets/images/histogram.png")
 plt.show()
 ```
 
-![Histogram](/assets/images/histogram.png)
+{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/histogram.png){% endraw %}
 
 The KDE curve provides a smooth approximation of the data distribution, making it easier to detect peaks and variations.
 
@@ -101,7 +101,7 @@ plt.savefig("assets/images/line_plot.png")
 plt.show()
 ```
 
-![Line Plot](/assets/images/line_plot.png)
+{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/line_plot.png){% endraw %}
 
 ## Conclusion
 
