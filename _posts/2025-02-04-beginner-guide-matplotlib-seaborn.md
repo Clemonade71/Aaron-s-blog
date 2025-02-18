@@ -115,4 +115,4 @@ But this is just the beginning! Experimenting with different datasets and visual
 - **Share Your Work**: Use your favorite visualizations in reports, presentations, or social media posts. Don’t forget to credit the tools you used!
 - **Join the Conversation**: Leave a comment or share your thoughts about this guide. What dataset are you planning to visualize next?
 
-Data visualization is a skill you’ll use throughout your data science journey—start practicing today!
+Data visualization is a skill you’ll use throughout your data science journey—start practicing today! 
