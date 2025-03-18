@@ -50,86 +50,83 @@ Ridge Regression is effective because it handles correlated features well and pr
 The Ridge Regression model used the standardized team statistics mentioned above as inputs, with the team's tournament Seed (historically indicative of overall performance and success potential) serving as the outcome variable. 
 By training the model on historical tournament data, it learned patterns between team statistics and seeding, providing a reliable measure of relative team strength.
 
-# Load dataset
-penguins = sns.load_dataset("penguins")
+## Key Findings
+After running 100,000 tournament simulations, I uncovered some intriguing insights:
 
-# Create scatter plot
-sns.scatterplot(data=penguins, x="flipper_length_mm", y="body_mass_g", hue="species")
-plt.title("Flipper Length vs Body Mass")
-plt.savefig("assets/images/scatter_plot.png")
-plt.show()
-```
+# The Top Championship Contenders
+While traditional powerhouses made their expected appearances, some surprise contenders emerged prominently from our statistical analysis.
+
+Top Favorites: Florida, Duke, Houston, and Auburn emerged as the statistical front-runners, each having a solid blend of efficiency, shooting accuracy, and defensive discipline.
+
+Balanced Teams Thrive: Teams showing strong balance between offense and defense consistently outperformed those relying heavily on one dimension.
+
+# Identifying Potential Upsets
+March Madness wouldn't be March Madness without upsets. By blending my model's predictions with historical upset probabilities, I flagged several early-round games ripe for surprises:
+
+5 vs. 12 Matchups: Colorado State vs. Memphis stood out, with a near-even probability suggesting a tense matchup.
+
+Underestimated Teams: Historical patterns indicate a 40% chance of 12-seeds defeating 5-seeds—our model's blended approach confirmed these matchups as prime upset candidates.
 
 ![Scatter Plot](/assets/images/scatter_plot.png)
 
-This plot makes it easy to see how different species vary in body mass and flipper length.
+How to read this visual:
+Teams on the left (low predicted score difference) with higher historical upset probabilities (higher dots) represent the biggest upset risks. 
+Warm colors indicate larger seed gaps, highlighting matchups where caution is warranted despite what the predictive model might initially suggest.
+Essentially, two seeds within 5 rankings are often the source of upsets, such as 6 vs 11, 7 vs 10, and 8 vs 9 during the first round.
 
-### Bar Charts
+## Cinderella Stories
 
-Next, let’s create a bar chart to visualize the average body mass of each penguin species:
+Who doesn't love a good Cinderella run? To quantify each team's Cinderella potential, I created a custom "Cinderella Index," emphasizing deeper tournament advancement from lower-seeded teams:
 
-```python
-# Bar chart example
-sns.barplot(data=penguins, x="species", y="body_mass_g", ci=None)
-plt.title("Average Body Mass of Penguin Species")
-plt.savefig("assets/images/bar_chart.png")
-plt.show()
-```
+# Top Cinderella candidates: 
+VCU, New Mexico, Arkansas, Colorado State, and Utah State topped the list, showcasing a strong blend of advanced metrics that suggest they're capable of deep tournament runs despite lower seeds.
 
 ![Bar Chart](/assets/images/bar_chart.png)
 
-This bar chart highlights the differences in average body mass across the three species.
+## Tournament Heatmap: Visualizing Team Strength
+Using a heatmap of advancement probabilities through each round, we clearly see teams poised for deep tournament runs and those likely to bow out early.
 
-### Histogram
+![Bar Chart](/assets/images/bar_chart.png)
+Darker shades signify stronger probabilities of advancing. Notice how a few select teams have notably consistent colors across multiple rounds—marking them as reliable tournament choices.
 
-Histograms are great for visualizing distributions. They help identify patterns such as skewness, spread, and outliers within the data. Here’s a histogram of penguin flipper lengths:
+These insights and visuals help distill complex predictions into easy-to-understand narratives, whether you're filling out your bracket or just looking for stories to follow during March Madness.
 
-```python
-# Histogram example
-sns.histplot(data=penguins, x="flipper_length_mm", kde=True, hue="species", bins=20)
-plt.title("Distribution of Flipper Lengths")
-plt.savefig("assets/images/histogram.png")
-plt.show()
-```
+## Challenges & Caveats
+While the model provided strong predictions and engaging insights, it’s crucial to recognize some limitations and challenges that arose:
 
-![Histogram](/assets/images/histogram.png)
+# Data Limitations and Merging Issues
+Incomplete Data:
+Some teams lacked comprehensive season statistics or had incomplete historical records, requiring me to use imputation methods (like filling missing values with averages). 
+This process inherently introduces some bias and uncertainty.
 
-The KDE curve provides a smooth approximation of the data distribution, making it easier to detect peaks and variations.
+#Matching Teams:
+Combining datasets (from ESPN, KenPom, and NCAA official brackets) occasionally posed matching challenges, as different sources sometimes used slightly varied team names or abbreviations. 
+I addressed this by manually mapping names.
 
-### Line Plot 
+# Historical vs. Current Team Performance
+Historical upset probabilities significantly inform early-round simulations, but the current tournament might differ substantially from past patterns. 
+Basketball evolves constantly, and relying heavily on historical probabilities risks overlooking new trends or changing game strategies.
 
-Lastly, here’s how to create a simple line plot (useful for time-series data or trends):
+# Limitations of Ridge Regression
+Although Ridge Regression handles correlated variables effectively and reduces overfitting, it doesn’t explicitly account for factors such as injuries, team chemistry, or recent momentum, all critical elements in March Madness outcomes.
 
-```python
-# Example line plot (for illustrative purposes)
-import numpy as np
-import pandas as pd
+# Blended Probability Decisions
+Due to time constraint, I was unable to go through every single tournament game over the last twenty-three years to find every single win, loss, and upset. Rather I found the upset history of the first round to use as historical verification.
+To balance historical trends with statistical modeling, I blended probabilities equally (50% historical, 50% model-based).
+While this helped capture both historical context and current data, it introduces a somewhat subjective weighting that may slightly over- or underestimate true upset probabilities.
 
-# Create example data
-data = pd.DataFrame({
-    "x": np.linspace(0, 10, 100),
-    "y": np.sin(np.linspace(0, 10, 100))
-})
+## Conclusion & Final Thoughts
+March Madness predictions are notoriously challenging—even the best statistical models can’t fully tame the madness. 
+Still, this exercise provided valuable insights into which teams have the strongest odds, which matchups scream upset alert, and who could write a Cinderella story.
+# Key Takeaways:
+Balanced teams (strong on both offense and defense) consistently emerge as safer picks.
 
-# Line plot
-sns.lineplot(data=data, x="x", y="y")
-plt.title("Example Line Plot")
-plt.savefig("assets/images/line_plot.png")
-plt.show()
-```
+Historical upset probabilities remain a critical factor—particularly early—but blending these with current team analytics offers superior predictive power.
 
-![Line Plot](/assets/images/line_plot.png)
+Lower-seeded teams with strong efficiency metrics (like VCU and New Mexico this year) could potentially surprise brackets.
 
-## Conclusion
+## For Your Bracket:
+Consider including at least one or two 12-over-5 seed upsets.
+Favor teams that combine statistical efficiency with historical consistency when choosing late-round teams.
+Ultimately, statistical analysis enhances understanding and improves bracket-building strategy, but a bit of March Madness intuition never hurts!
 
-Data visualization is a vital tool for any data scientist, helping to uncover patterns, share insights, and make data accessible to everyone. In this guide, we explored the basics of Matplotlib and Seaborn by creating scatter plots, bar charts, histograms, and even a line plot. These tools offer incredible flexibility and power, making them essential for your data science toolkit.
-
-But this is just the beginning! Experimenting with different datasets and visualizations is the best way to master these libraries. Challenge yourself to visualize your own data or recreate visualizations you’ve seen in research papers or articles.
-
-### What's Next?
-
-- **Explore More**: Check out the [Seaborn Documentation](https://seaborn.pydata.org/) and [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html) to dive deeper.
-- **Share Your Work**: Use your favorite visualizations in reports, presentations, or social media posts. Don’t forget to credit the tools you used!
-- **Join the Conversation**: Leave a comment or share your thoughts about this guide. What dataset are you planning to visualize next?
-
-Data visualization is a skill you’ll use throughout your data science journey—start practicing today!
