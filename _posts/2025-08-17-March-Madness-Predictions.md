@@ -56,7 +56,7 @@ While traditional powerhouses made their expected appearances, some surprise con
 - **Top Favorites:** Florida, Duke, Houston, and Auburn emerged as the statistical front-runners, each having a solid blend of efficiency, shooting accuracy, and defensive discipline.
 - **Balanced Teams Thrive:** Teams showing strong balance between offense and defense consistently outperformed those relying heavily on one dimension.
 
-![Top Championship Contenders](assets/images/Contenders.png)
+{% raw %}![Top Contenders]({{site.url}}/{{site.baseurl}}/assets/images/Contenders.png){% endraw %}
 
 ### Identifying Potential Upsets
 
@@ -65,7 +65,7 @@ March Madness wouldn't be March Madness without upsets. By blending my model's p
 - **5 vs. 12 Matchups:** Colorado State vs. Memphis stood out, with a near-even probability suggesting a tense matchup.
 - **Underestimated Teams:** Historical patterns indicate a 40% chance of 12-seeds defeating 5-seeds—our model's blended approach confirmed these matchups as prime upset candidates.
 
-![Upset Alert](assets/images/Upsets.png)
+{% raw %}![Scatter Plot]({{site.url}}/{{site.baseurl}}/assets/images/Upsets.png){% endraw %}
 
 **How to read this visual:**  
 Teams on the left (low predicted score difference) with higher historical upset probabilities (higher dots) represent the biggest upset risks. Warm colors indicate larger seed gaps, highlighting matchups where caution is warranted despite what the predictive model might initially suggest. Essentially, two seeds within 5 rankings are often the source of upsets, such as 6 vs 11, 7 vs 10, and 8 vs 9 during the first round.
@@ -76,13 +76,13 @@ Who doesn't love a good Cinderella run? To quantify each team's Cinderella poten
 
 - **Top Cinderella candidates:** VCU, New Mexico, Arkansas, Colorado State, and Utah State topped the list, showcasing a strong blend of advanced metrics that suggest they're capable of deep tournament runs despite lower seeds.
 
-![Cinderella Candidates](assets/images/Cinderella.png)
+{% raw %}![Cinderella Teams]({{site.url}}/{{site.baseurl}}/assets/images/Cinderella.png){% endraw %}
 
 ### Tournament Heatmap: Visualizing Team Strength
 
 Using a heatmap of advancement probabilities through each round, we clearly see teams poised for deep tournament runs and those likely to bow out early.
 
-![Advancement Probabilities Heatmap](assets/images/Advance.png)
+{% raw %}![Advance Probability]({{site.url}}/{{site.baseurl}}/assets/images/Advance.png){% endraw %}
 
 Darker shades signify stronger probabilities of advancing. Notice how a few select teams have notably consistent colors across multiple rounds—marking them as reliable tournament choices.
 
