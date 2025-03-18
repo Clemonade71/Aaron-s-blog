@@ -1,0 +1,135 @@
+---
+layout: post
+title: "Predicting Upsets and Finding Cinderella"
+date: 2025-03-18
+categories: [data-science, visualization]
+---
+
+## Introduction
+
+March Madness. Just the phrase evokes memories of buzzer-beaters, underdog triumphs, and inevitably ruined brackets. Each year, millions of fans eagerly predict the outcome of the NCAA basketball tournament, hoping to find that elusive perfect bracket. Yet, despite years of watching, analyzing, and predicting, March Madness consistently delivers surprises that defy all logic.
+
+But what if we could harness data science to anticipate these surprises? What if statistics could illuminate not only the championship favorites but also the Cinderella stories waiting to unfold?
+
+In this blog post, I’ll walk through how I built my very own statistical model from scratch to forecast the 2025 March Madness tournament outcomes, hopefully identifying top contenders, potential upsets, and highlighting teams poised to capture "One Shining Moment.
+
+## Data Acquisition and Preparation
+### Where Did I Get the Data?
+My analysis is based primarily on advanced basketball statistics publicly available through sources like KenPom.com and official NCAA/ESPN team databases. 
+These sources provide comprehensive team metrics—such as Adjusted Offensive and Defensive Efficiency, Effective Field Goal Percentage, Tempo, Turnover Rate, and much more.
+Additionally, historical tournament seeding data from Wikipedia helped set baselines for typical upset frequencies.
+
+### Challenges and Data Cleaning
+Working with real-world sports data often introduces challenges—missing entries, inconsistent naming conventions, and discrepancies across sources. Here's how I navigated these obstacles:
+
+Missing Data: I used mean imputation to handle missing team statistics, ensuring fairness and completeness without heavily biasing the results.
+
+Standardization: To accurately compare teams, I standardized each metric, converting statistics into comparable scales. This ensured that no single metric unfairly dominated the model simply due to having larger numerical ranges.
+
+Merging datasets: Combining multiple datasets required careful attention to detail. Matching team names across ESPN, KenPom, and NCAA data was crucial, and careful verification was needed to confirm accuracy.
+With a clean, consistent dataset ready, I moved forward to build a predictive model aimed at capturing the chaos and excitement of March Madness.
+
+## Building My Model
+
+### Understanding Team Performance (Correlation Analysis)
+To accurately predict tournament outcomes, I first needed to identify which statistics correlate most strongly with winning in March Madness. Using a combination of exploratory data analysis and correlation matrices, several key metrics stood out:
+
+Adjusted Offensive Efficiency (points scored per 100 possessions, adjusted for opponent quality)
+
+Adjusted Defensive Efficiency (points allowed per 100 possessions, adjusted similarly)
+
+Effective Field Goal Percentage (eFG%) (a measure of shooting efficiency)
+
+Turnover Rate (TO%) (how frequently a team loses possession)
+
+These metrics amongst others collectively provide a comprehensive snapshot of a team's true ability, beyond surface-level wins and losses.
+
+### Predicting Outcomes (Ridge Regression)
+With these insights, I turned to Ridge Regression—a statistical technique perfect for this kind of predictive challenge. 
+Ridge Regression is effective because it handles correlated features well and prevents overfitting, ensuring our predictions generalize effectively to the chaos of the tournament.
+The Ridge Regression model used the standardized team statistics mentioned above as inputs, with the team's tournament Seed (historically indicative of overall performance and success potential) serving as the outcome variable. 
+By training the model on historical tournament data, it learned patterns between team statistics and seeding, providing a reliable measure of relative team strength.
+
+# Load dataset
+penguins = sns.load_dataset("penguins")
+
+# Create scatter plot
+sns.scatterplot(data=penguins, x="flipper_length_mm", y="body_mass_g", hue="species")
+plt.title("Flipper Length vs Body Mass")
+plt.savefig("assets/images/scatter_plot.png")
+plt.show()
+```
+
+![Scatter Plot](/assets/images/scatter_plot.png)
+
+This plot makes it easy to see how different species vary in body mass and flipper length.
+
+### Bar Charts
+
+Next, let’s create a bar chart to visualize the average body mass of each penguin species:
+
+```python
+# Bar chart example
+sns.barplot(data=penguins, x="species", y="body_mass_g", ci=None)
+plt.title("Average Body Mass of Penguin Species")
+plt.savefig("assets/images/bar_chart.png")
+plt.show()
+```
+
+![Bar Chart](/assets/images/bar_chart.png)
+
+This bar chart highlights the differences in average body mass across the three species.
+
+### Histogram
+
+Histograms are great for visualizing distributions. They help identify patterns such as skewness, spread, and outliers within the data. Here’s a histogram of penguin flipper lengths:
+
+```python
+# Histogram example
+sns.histplot(data=penguins, x="flipper_length_mm", kde=True, hue="species", bins=20)
+plt.title("Distribution of Flipper Lengths")
+plt.savefig("assets/images/histogram.png")
+plt.show()
+```
+
+![Histogram](/assets/images/histogram.png)
+
+The KDE curve provides a smooth approximation of the data distribution, making it easier to detect peaks and variations.
+
+### Line Plot 
+
+Lastly, here’s how to create a simple line plot (useful for time-series data or trends):
+
+```python
+# Example line plot (for illustrative purposes)
+import numpy as np
+import pandas as pd
+
+# Create example data
+data = pd.DataFrame({
+    "x": np.linspace(0, 10, 100),
+    "y": np.sin(np.linspace(0, 10, 100))
+})
+
+# Line plot
+sns.lineplot(data=data, x="x", y="y")
+plt.title("Example Line Plot")
+plt.savefig("assets/images/line_plot.png")
+plt.show()
+```
+
+![Line Plot](/assets/images/line_plot.png)
+
+## Conclusion
+
+Data visualization is a vital tool for any data scientist, helping to uncover patterns, share insights, and make data accessible to everyone. In this guide, we explored the basics of Matplotlib and Seaborn by creating scatter plots, bar charts, histograms, and even a line plot. These tools offer incredible flexibility and power, making them essential for your data science toolkit.
+
+But this is just the beginning! Experimenting with different datasets and visualizations is the best way to master these libraries. Challenge yourself to visualize your own data or recreate visualizations you’ve seen in research papers or articles.
+
+### What's Next?
+
+- **Explore More**: Check out the [Seaborn Documentation](https://seaborn.pydata.org/) and [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html) to dive deeper.
+- **Share Your Work**: Use your favorite visualizations in reports, presentations, or social media posts. Don’t forget to credit the tools you used!
+- **Join the Conversation**: Leave a comment or share your thoughts about this guide. What dataset are you planning to visualize next?
+
+Data visualization is a skill you’ll use throughout your data science journey—start practicing today!
