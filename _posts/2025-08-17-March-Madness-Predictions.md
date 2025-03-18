@@ -1,6 +1,6 @@
 # March Madness 2025: Predicting the Unpredictable
 
-## Introduction
+## Introduction 
 
 March Madness. Just the phrase evokes memories of buzzer-beaters, underdog triumphs, and inevitably ruined brackets. Each year, millions of fans eagerly predict the outcome of the NCAA basketball tournament, hoping to find that elusive perfect bracket. Yet, despite years of watching, analyzing, and predicting, March Madness consistently delivers surprises that defy all logic.
 
