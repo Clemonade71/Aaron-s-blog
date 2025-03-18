@@ -6,7 +6,7 @@ categories: [data-science, visualization]
 ---
 
 ## Introduction 
-
+ 
 March Madness. Just the phrase evokes memories of buzzer-beaters, underdog triumphs, and inevitably ruined brackets. Each year, millions of fans eagerly predict the outcome of the NCAA basketball tournament, hoping to find that elusive perfect bracket. Yet, despite years of watching, analyzing, and predicting, March Madness consistently delivers surprises that defy all logic.
 
 But what if we could harness data science to anticipate these surprises? What if statistics could illuminate not only the championship favorites but also the Cinderella stories waiting to unfold?
